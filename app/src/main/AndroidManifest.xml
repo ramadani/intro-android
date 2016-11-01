@@ -3,6 +3,7 @@
     package="com.example.dani.introandroiddemo">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <application
         android:allowBackup="true"
@@ -61,9 +62,12 @@
             android:label="@string/title_activity_progress_bar" />
         <activity
             android:name=".GridViewDemoActivity"
-            android:label="@string/title_activity_grid_view_demo"/>
-        <activity android:name=".PersistSettingsActivity"
-            android:label="@string/title_activity_persist_settings">
+            android:label="@string/title_activity_grid_view_demo" />
+        <activity
+            android:name=".PersistSettingsActivity"
+            android:label="@string/title_activity_persist_settings"/>
+        <activity android:name=".ContactListActivity"
+            android:label="@string/title_activity_contact_list">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
