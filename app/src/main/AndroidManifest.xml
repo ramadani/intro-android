@@ -46,9 +46,12 @@
             android:label="@string/title_activity_async_task_perform" />
         <activity
             android:name=".SmartImageDownloadActivity"
-            android:label="@string/title_activity_smart_image_download"/>
-        <activity android:name=".ToastFormInputsActivity"
-            android:label="@string/title_activity_toast_form_inputs">
+            android:label="@string/title_activity_smart_image_download" />
+        <activity
+            android:name=".ToastFormInputsActivity"
+            android:label="@string/title_activity_toast_form_inputs"/>
+        <activity android:name=".SpinnerWithToastActivity"
+            android:label="@string/title_activity_spinner_with_toast">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

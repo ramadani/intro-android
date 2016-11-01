@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner_options">
+        <item>One Piece</item>
+        <item>Naruto Shipuuden</item>
+        <item>Fairy Tail</item>
+        <item>Gintama</item>
+        <item>Hunter x Hunter</item>
+    </string-array>
+</resources>
