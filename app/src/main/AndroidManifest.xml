@@ -49,9 +49,15 @@
             android:label="@string/title_activity_smart_image_download" />
         <activity
             android:name=".ToastFormInputsActivity"
-            android:label="@string/title_activity_toast_form_inputs"/>
-        <activity android:name=".SpinnerWithToastActivity"
-            android:label="@string/title_activity_spinner_with_toast">
+            android:label="@string/title_activity_toast_form_inputs" />
+        <activity
+            android:name=".SpinnerWithToastActivity"
+            android:label="@string/title_activity_spinner_with_toast" />
+        <activity
+            android:name=".TimePickerDemoActivity"
+            android:label="@string/title_activity_time_picker_demo"/>
+        <activity android:name=".ProgressBarActivity"
+            android:label="@string/title_activity_progress_bar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
