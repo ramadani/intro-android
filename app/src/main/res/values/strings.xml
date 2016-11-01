@@ -23,6 +23,7 @@
     <string name="title_activity_basic_image_download">Basic Image Download</string>
     <string name="title_activity_async_task_perform">Async Task Perform</string>
     <string name="title_activity_smart_image_download">Smart Image Download</string>
+    <string name="title_activity_toast_form_inputs">Toast Form Input</string>
 
     <string name="enter_url_address">Enter URL Address</string>
     <string name="visit">Visit</string>

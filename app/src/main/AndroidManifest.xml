@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dani.introandroiddemo">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -43,10 +43,12 @@
             android:label="@string/title_activity_basic_image_download" />
         <activity
             android:name=".AsyncTaskPerformActivity"
-            android:label="@string/title_activity_async_task_perform"/>
-        <activity android:name=".SmartImageDownloadActivity"
-            android:label="@string/title_activity_smart_image_download">
-
+            android:label="@string/title_activity_async_task_perform" />
+        <activity
+            android:name=".SmartImageDownloadActivity"
+            android:label="@string/title_activity_smart_image_download"/>
+        <activity android:name=".ToastFormInputsActivity"
+            android:label="@string/title_activity_toast_form_inputs">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
