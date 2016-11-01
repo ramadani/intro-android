@@ -58,9 +58,12 @@
             android:label="@string/title_activity_time_picker_demo" />
         <activity
             android:name=".ProgressBarActivity"
-            android:label="@string/title_activity_progress_bar"/>
-        <activity android:name=".GridViewDemoActivity"
-            android:label="@string/title_activity_grid_view_demo">
+            android:label="@string/title_activity_progress_bar" />
+        <activity
+            android:name=".GridViewDemoActivity"
+            android:label="@string/title_activity_grid_view_demo"/>
+        <activity android:name=".PersistSettingsActivity"
+            android:label="@string/title_activity_persist_settings">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
