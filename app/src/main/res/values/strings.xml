@@ -31,8 +31,10 @@
     <string name="title_activity_persist_settings">Persist Settings</string>
     <string name="title_activity_contact_list">Contact List</string>
     <string name="title_custom_list">Custom List</string>
+    <string name="title_book_list">Book List</string>
 
     <string name="enter_url_address">Enter URL Address</string>
     <string name="visit">Visit</string>
+    <string name="search">Search</string>
     <string name="submit">Submit</string>
 </resources>

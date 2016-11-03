@@ -68,9 +68,13 @@
             android:label="@string/title_activity_persist_settings" />
         <activity
             android:name=".ContactListActivity"
-            android:label="@string/title_activity_contact_list"/>
-        <activity android:name=".CustomListActivity"
-            android:label="@string/title_custom_list">
+            android:label="@string/title_activity_contact_list" />
+        <activity
+            android:name=".CustomListActivity"
+            android:label="@string/title_custom_list"/>
+        <activity android:name=".BookListActivity"
+            android:label="@string/title_book_list"
+            android:icon="@drawable/ic_launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
