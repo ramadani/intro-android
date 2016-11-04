@@ -1,12 +1,17 @@
 package com.example.dani.introandroiddemo;
 
+import android.content.Intent;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import com.example.dani.introandroiddemo.book.Book;
 import com.example.dani.introandroiddemo.book.BookAdapter;
@@ -21,11 +26,11 @@ import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
 
-import static android.R.attr.id;
-import static com.example.dani.introandroiddemo.R.string.search;
-
 public class BookListActivity extends AppCompatActivity {
+    public static final String BOOK_DETAIL_KEY = "com.example.dani.introandroiddemo.BOOK_DETAIL";
+
     private ListView lvBooks;
+    private ProgressBar progressBar;
     private BookAdapter bookAdapter;
 
     private BookClient client;
@@ -36,12 +41,13 @@ public class BookListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_book_list);
 
         lvBooks = (ListView) findViewById(R.id.lvBooks);
+        progressBar = (ProgressBar) findViewById(R.id.pbBooks);
+
         ArrayList<Book> books = new ArrayList<Book>();
         bookAdapter = new BookAdapter(this, books);
         lvBooks.setAdapter(bookAdapter);
 
-        // Fetch the data remotely
-        // fetchBooks();
+        setupBookSelectedListener();
     }
 
     @Override
@@ -83,6 +89,9 @@ public class BookListActivity extends AppCompatActivity {
     // Executes an API call to the OpenLibrary search endpoint, parses the results
     // Converts them into an array of book objects and adds them to the adapter
     private void fetchBooks(String query) {
+        // Show progress bar before making network request
+        progressBar.setVisibility(ProgressBar.VISIBLE);
+
         client = new BookClient();
 
         client.getBooks(query, new JsonHttpResponseHandler() {
@@ -108,10 +117,31 @@ public class BookListActivity extends AppCompatActivity {
 
                         bookAdapter.notifyDataSetChanged();
                     }
+
+                    // hide progress bar
+                    progressBar.setVisibility(ProgressBar.GONE);
                 } catch (JSONException e) {
                     // Invalid JSON format, show appropriate error.
                     e.printStackTrace();
                 }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                progressBar.setVisibility(ProgressBar.GONE);
+            }
+        });
+    }
+
+    public void setupBookSelectedListener() {
+        lvBooks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d("DEBUG", "position " + position);
+                // Launch the detail view passing book as an extra
+                Intent intent = new Intent(BookListActivity.this, BookDetailActivity.class);
+                intent.putExtra(BOOK_DETAIL_KEY, bookAdapter.getItem(position));
+                startActivity(intent);
             }
         });
     }
